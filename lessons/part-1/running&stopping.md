@@ -13,7 +13,7 @@ docker run -it ubuntu
 ```bash
 docker run -d -it --name ubuntu24 ubuntu sh -c 'while true; do date; sleep 1; done'
 ```
-> output the stdout of ubuntu24 container using ```logs``` command and ```-f``` option.
+> output the stdout of ubuntu24 container using ```log``` command and ```-f``` option.
 ```bash
 docker log -f ubuntu24
 ```
@@ -68,3 +68,19 @@ docker attach ubuntu24
 ^+p ^+q
 ```
 
+**Commands, description**
+
+| Commands | Description |
+|:---------|:------------|
+|```docker run -t <container>```| tty option to cummunicate with the container |
+|```docker run -i <contianer>```| to send stdin from shell to container
+|```docker run --name <chosen-name> <image>```| give a chosen name to the container |
+|```docker run ubuntu sh -c '<command>'```| pass shell command to docker| 
+|```docker log -f <container>```| see stdout of a container |
+|```docker pause <container>```| pause a container |
+|```docker unpause <container>```| unpasue a container |
+|```docker attach <container>```| attach to the main process of a running container |
+|```docker exec -it <container> bash```| run a new process in a running container |
+|```docker kill <container>```| send a kill signal to container |
+|```docker rm --force <contianer>```| remove a container immediately with kill signal |
+|```docker run --rm <image> sh -c 'while true; do date; sleep 1; done'```| automatically remove a container after finish executing |
